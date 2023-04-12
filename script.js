@@ -17,25 +17,35 @@ function playRound(playerSelection, computerSelection) {
     // your code here!
     if (playerSelection == "rock" || "paper" || "scissors" ){
         if (playerSelection == "rock" && computerSelection == "scissors"){
-            console.log ("you win " + playerSelection + " beats " + computerSelection);
+            return ("you win " + playerSelection + " beats " + computerSelection);
         }
         else if (playerSelection == "paper" && computerSelection == "rock"){
-            console.log ("you win " + playerSelection + " beats " + computerSelection);
+            return ("you win " + playerSelection + " beats " + computerSelection);
         }
         else if (playerSelection == "scissors" && computerSelection == "paper"){
-            console.log ("you win "+ playerSelection + " beats " + computerSelection);
+            return ("you win "+ playerSelection + " beats " + computerSelection);
         }
         else if (playerSelection == computerSelection){
-            console.log ("its a draw");
+            return ("its a draw");
         }
         else {
-            console.log ("computer wins " + computerSelection + " beats " + playerSelection);
+            return ("computer wins " + computerSelection + " beats " + playerSelection);
         }
     }
    
   }
    
-  const playerSelection = prompt("rock, paper, scissors?"); 
+  function game() {
+    
+    for(let i=0; i<5; i++){
+       playRound(i);
+       
+    }
+  }
+
+  const playerSelection = prompt("rock, paper, scissors?").toLowerCase(); 
   const computerSelection = getComputerChoice();
-  console.log(computerSelection);
+ 
   console.log(playRound(playerSelection, computerSelection));
+  
+  
